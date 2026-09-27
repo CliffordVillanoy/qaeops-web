@@ -1,0 +1,75 @@
+{
+  "method": "WCAG sRGB relative luminance, opaque colors, no rounded threshold decisions",
+  "pairs": [
+    {
+      "a": "#0F0E47",
+      "b": "#272757",
+      "ratio": 1.2895677199891502,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": false
+    },
+    {
+      "a": "#0F0E47",
+      "b": "#505081",
+      "ratio": 2.3895095278316756,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": false
+    },
+    {
+      "a": "#0F0E47",
+      "b": "#8686AC",
+      "ratio": 5.1267770544883176,
+      "normalTextAA": true,
+      "largeTextAndRequiredIndicatorAA": true
+    },
+    {
+      "a": "#0F0E47",
+      "b": "#F7F7FC",
+      "ratio": 16.74863301594506,
+      "normalTextAA": true,
+      "largeTextAndRequiredIndicatorAA": true
+    },
+    {
+      "a": "#272757",
+      "b": "#505081",
+      "ratio": 1.8529538936131091,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": false
+    },
+    {
+      "a": "#272757",
+      "b": "#8686AC",
+      "ratio": 3.975577997975517,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": true
+    },
+    {
+      "a": "#272757",
+      "b": "#F7F7FC",
+      "ratio": 12.987788664627846,
+      "normalTextAA": true,
+      "largeTextAndRequiredIndicatorAA": true
+    },
+    {
+      "a": "#505081",
+      "b": "#8686AC",
+      "ratio": 2.1455353053731216,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": false
+    },
+    {
+      "a": "#505081",
+      "b": "#F7F7FC",
+      "ratio": 7.009234665468505,
+      "normalTextAA": true,
+      "largeTextAndRequiredIndicatorAA": true
+    },
+    {
+      "a": "#8686AC",
+      "b": "#F7F7FC",
+      "ratio": 3.2668931841462086,
+      "normalTextAA": false,
+      "largeTextAndRequiredIndicatorAA": true
+    }
+  ]
+}

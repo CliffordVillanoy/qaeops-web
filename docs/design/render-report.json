@@ -1,0 +1,45 @@
+{
+  "font": [
+    "Capriola",
+    "Regular"
+  ],
+  "screens": [
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 7468
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 5701
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 5017
+    },
+    {
+      "name": "header-hero",
+      "width": 1440,
+      "height": 770
+    },
+    {
+      "name": "mobile-expanded",
+      "width": 390,
+      "height": 641
+    },
+    {
+      "name": "direction-board",
+      "width": 1440,
+      "height": 1143
+    },
+    {
+      "name": "component-states",
+      "width": 1440,
+      "height": 1613
+    }
+  ],
+  "text_runs_checked": 583,
+  "checks": "All text runs wrap within their assigned widths; all full-page screens fit the render canvas."
+}
