@@ -40,6 +40,10 @@
           </style>`;
 
           const svg = shadow.querySelector('svg');
+          svg.querySelector('title')?.remove();
+          svg.querySelector('desc')?.remove();
+          svg.removeAttribute('aria-labelledby');
+          svg.setAttribute('aria-hidden', 'true');
           const robot = svg.querySelector('#qaeops-robot');
           const openEyes = [
             svg.querySelector('#qaeops-eye-left-blink'),
