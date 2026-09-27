@@ -380,7 +380,8 @@
 
   brandLogos.forEach((logo) => {
     const logoSource = logo.getAttribute('src');
-    logo.addEventListener('mouseenter', () => { logo.src = `${logoSource}#blink`; });
+    const hoverSource = logoSource.replace('blink-animated.svg', 'blink-animated-hover.svg');
+    logo.addEventListener('mouseenter', () => { logo.src = `${hoverSource}?blink=${Date.now()}`; });
     logo.addEventListener('mouseleave', () => { logo.src = logoSource; });
   });
 
