@@ -3,7 +3,6 @@
 (() => {
   const root = document.documentElement;
   const themeToggles = [...document.querySelectorAll('[data-theme-toggle]')];
-  const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img, .site-footer__mark img')];
 
   function applyTheme(theme, persist = false) {
     root.dataset.theme = theme;
@@ -375,40 +374,6 @@
           button.setAttribute('aria-label', 'Copy command');
         }, 1800);
       });
-    });
-  }
-
-  if (brandLogos.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const timers = new WeakMap();
-
-    brandLogos.forEach((logo) => {
-      const openLogo = logo.getAttribute('src');
-      const closedLogo = openLogo.replace('blink-animated.svg', 'blink-closed.svg');
-      const host = logo.parentElement;
-      if (!host) return;
-      new Image().src = closedLogo;
-
-      const stopBlinking = () => {
-        const timer = timers.get(logo);
-        if (timer) window.clearTimeout(timer);
-        timers.delete(logo);
-        logo.src = openLogo;
-      };
-
-      const blink = () => {
-        logo.src = closedLogo;
-        timers.set(logo, window.setTimeout(() => {
-          logo.src = openLogo;
-          timers.set(logo, window.setTimeout(blink, 2200));
-        }, 180));
-      };
-
-      host.addEventListener('mouseenter', () => {
-        stopBlinking();
-        timers.set(logo, window.setTimeout(blink, 350));
-      });
-      host.addEventListener('mouseleave', stopBlinking);
-      host.dataset.logoBlink = 'ready';
     });
   }
 
