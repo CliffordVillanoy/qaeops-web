@@ -25,13 +25,31 @@
   });
   applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    brandLogos.forEach((logo) => {
-      const source = logo.getAttribute('src').split('#')[0];
-      const host = logo.parentElement;
-      host.addEventListener('mouseenter', () => { logo.src = `${source}#blink`; });
-      host.addEventListener('mouseleave', () => { logo.src = source; });
-    });
+  if (brandLogos.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    fetch(brandLogos[0].src)
+      .then((response) => {
+        if (!response.ok) throw new Error('Logo asset unavailable');
+        return response.text();
+      })
+      .then((logoMarkup) => {
+        brandLogos.forEach((logo) => {
+          const host = logo.parentElement;
+          const shadow = host.attachShadow({ mode: 'open' });
+          shadow.innerHTML = `${logoMarkup}<style>
+            svg { display: block; width: 100%; height: 100%; }
+            #qaeops-eye-left-blink,
+            #qaeops-eye-right-blink { animation: none !important; }
+            svg.is-blinking #qaeops-eye-left-blink { animation: qaeops-blink-left 4s ease-in-out infinite !important; }
+            svg.is-blinking #qaeops-eye-right-blink { animation: qaeops-blink-right 4s ease-in-out infinite !important; }
+          </style>`;
+
+          const svg = shadow.querySelector('svg');
+          host.addEventListener('mouseenter', () => { svg.classList.add('is-blinking'); });
+          host.addEventListener('mouseleave', () => { svg.classList.remove('is-blinking'); });
+          host.dataset.logoBlink = 'ready';
+        });
+      })
+      .catch(() => {});
   }
 
   if (document.fonts?.load) {
