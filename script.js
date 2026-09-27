@@ -400,3 +400,6 @@
   renderDocumentationTopic();
   document.body.classList.add('docs-ready');
 })();
+if (window.location.pathname.endsWith('/index.html')) {
+  window.history.replaceState(null, '', window.location.href.replace(/index\.html(?=([?#]|$))/, ''));
+}
