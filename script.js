@@ -37,15 +37,51 @@
           const shadow = host.attachShadow({ mode: 'open' });
           shadow.innerHTML = `${logoMarkup}<style>
             svg { display: block; width: 100%; height: 100%; }
-            #qaeops-eye-left-blink,
-            #qaeops-eye-right-blink { animation: none !important; }
-            svg.is-blinking #qaeops-eye-left-blink { animation: qaeops-blink-left 4s ease-in-out infinite !important; }
-            svg.is-blinking #qaeops-eye-right-blink { animation: qaeops-blink-right 4s ease-in-out infinite !important; }
           </style>`;
 
           const svg = shadow.querySelector('svg');
-          host.addEventListener('mouseenter', () => { svg.classList.add('is-blinking'); });
-          host.addEventListener('mouseleave', () => { svg.classList.remove('is-blinking'); });
+          const robot = svg.querySelector('#qaeops-robot');
+          const openEyes = [
+            svg.querySelector('#qaeops-eye-left-blink'),
+            svg.querySelector('#qaeops-eye-right-blink'),
+          ];
+          const closedEyes = [
+            ['M515 592 Q563 610 611 592'],
+            ['M875 540 Q918 556 961 540'],
+          ].map(([pathData]) => {
+            const eye = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            eye.setAttribute('d', pathData);
+            eye.setAttribute('fill', 'none');
+            eye.setAttribute('stroke', '#0F0E47');
+            eye.setAttribute('stroke-width', '22');
+            eye.setAttribute('stroke-linecap', 'round');
+            eye.style.display = 'none';
+            robot.append(eye);
+            return eye;
+          });
+          let blinkTimer;
+
+          const showClosedEyes = (closed) => {
+            openEyes.forEach((eye) => { eye.style.display = closed ? 'none' : ''; });
+            closedEyes.forEach((eye) => { eye.style.display = closed ? '' : 'none'; });
+          };
+          const stopBlinking = () => {
+            window.clearTimeout(blinkTimer);
+            showClosedEyes(false);
+          };
+          const blink = () => {
+            showClosedEyes(true);
+            blinkTimer = window.setTimeout(() => {
+              showClosedEyes(false);
+              blinkTimer = window.setTimeout(blink, 2200);
+            }, 160);
+          };
+
+          host.addEventListener('mouseenter', () => {
+            stopBlinking();
+            blinkTimer = window.setTimeout(blink, 350);
+          });
+          host.addEventListener('mouseleave', stopBlinking);
           host.dataset.logoBlink = 'ready';
         });
       })
