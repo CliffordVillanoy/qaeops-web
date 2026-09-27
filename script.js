@@ -378,38 +378,38 @@
     });
   }
 
-  if (brandLogos.length) {
-    fetch(brandLogos[0].src)
-      .then((response) => {
-        if (!response.ok) throw new Error('Logo asset unavailable');
-        return response.text();
-      })
-      .then((logoMarkup) => {
-        brandLogos.forEach((logo) => {
-          const host = logo.parentElement;
-          if (!host || host.shadowRoot) return;
-          const shadow = host.attachShadow({ mode: 'open' });
-          shadow.innerHTML = `<style>
-            svg { display: block; width: 100%; height: 100%; }
-            :host(:hover) #qaeops-eye-left-blink { animation: qaeops-blink-left 2.4s ease-in-out infinite; }
-            :host(:hover) #qaeops-eye-right-blink { animation: qaeops-blink-right 2.4s ease-in-out infinite; }
-            @keyframes qaeops-blink-left {
-              0%, 42%, 56%, 100% { transform: translate(562.58px, 591.2px) rotate(-8deg) scale(1, 1) rotate(8deg) translate(-562.58px, -591.2px); }
-              48% { transform: translate(562.58px, 591.2px) rotate(-8deg) scale(1, .05) rotate(8deg) translate(-562.58px, -591.2px); }
-            }
-            @keyframes qaeops-blink-right {
-              0%, 42%, 56%, 100% { transform: translate(918.11px, 538.79px) rotate(-8deg) scale(1, 1) rotate(8deg) translate(-918.11px, -538.79px); }
-              48% { transform: translate(918.11px, 538.79px) rotate(-8deg) scale(1, .05) rotate(8deg) translate(-918.11px, -538.79px); }
-            }
-            @media (prefers-reduced-motion: reduce) {
-              :host(:hover) #qaeops-eye-left-blink,
-              :host(:hover) #qaeops-eye-right-blink { animation: none; }
-            }
-          </style>${logoMarkup}`;
-          host.dataset.logoBlink = 'ready';
-        });
-      })
-      .catch(() => {});
+  if (brandLogos.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const timers = new WeakMap();
+
+    brandLogos.forEach((logo) => {
+      const openLogo = logo.getAttribute('src');
+      const closedLogo = openLogo.replace('blink-animated.svg', 'blink-closed.svg');
+      const host = logo.parentElement;
+      if (!host) return;
+      new Image().src = closedLogo;
+
+      const stopBlinking = () => {
+        const timer = timers.get(logo);
+        if (timer) window.clearTimeout(timer);
+        timers.delete(logo);
+        logo.src = openLogo;
+      };
+
+      const blink = () => {
+        logo.src = closedLogo;
+        timers.set(logo, window.setTimeout(() => {
+          logo.src = openLogo;
+          timers.set(logo, window.setTimeout(blink, 2200));
+        }, 180));
+      };
+
+      host.addEventListener('mouseenter', () => {
+        stopBlinking();
+        timers.set(logo, window.setTimeout(blink, 350));
+      });
+      host.addEventListener('mouseleave', stopBlinking);
+      host.dataset.logoBlink = 'ready';
+    });
   }
 
   window.addEventListener('hashchange', () => {
