@@ -6,10 +6,10 @@
     <clipPath id="qaeops-tile-clip"><use href="#qaeops-tile-shape"/></clipPath>
   </defs>
   <style>
-    #qaeops-eye-left-blink {
+    svg:target #qaeops-eye-left-blink {
       animation: qaeops-blink-left 4s ease-in-out infinite;
     }
-    #qaeops-eye-right-blink {
+    svg:target #qaeops-eye-right-blink {
       animation: qaeops-blink-right 4s ease-in-out infinite;
     }
     @keyframes qaeops-blink-left {

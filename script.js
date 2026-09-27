@@ -3,6 +3,7 @@
 (() => {
   const root = document.documentElement;
   const themeToggles = [...document.querySelectorAll('[data-theme-toggle]')];
+  const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img, .site-footer__mark img')];
 
   function applyTheme(theme, persist = false) {
     root.dataset.theme = theme;
@@ -23,6 +24,15 @@
     });
   });
   applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    brandLogos.forEach((logo) => {
+      const source = logo.getAttribute('src').split('#')[0];
+      const host = logo.parentElement;
+      host.addEventListener('mouseenter', () => { logo.src = `${source}#blink`; });
+      host.addEventListener('mouseleave', () => { logo.src = source; });
+    });
+  }
 
   if (document.fonts?.load) {
     document.fonts.load('20px "Material Symbols Outlined"').then(() => {
