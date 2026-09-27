@@ -25,7 +25,7 @@
   });
   applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
 
-  if (brandLogos.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (brandLogos.length) {
     fetch(brandLogos[0].src)
       .then((response) => {
         if (!response.ok) throw new Error('Logo asset unavailable');
