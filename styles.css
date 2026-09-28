@@ -4582,7 +4582,7 @@ summary:active {
 .docs-header-search {
   flex: 0 0 15rem;
   width: 15rem;
-  margin: 0 0 0 .25rem;
+  margin: 0 0 0 .75rem;
 }
 @media (max-width: 1119px) {
   .docs-header-search {
@@ -5342,8 +5342,16 @@ html[data-theme="dark"] {
 }
 
 header nav[aria-label="Main Navigation"] {
-  gap: clamp(1rem, 1.25vw, 1.25rem);
+  gap: .5rem;
   margin-left: auto;
+}
+
+header nav[aria-label="Main Navigation"] .header-github-link {
+  margin-left: .5rem;
+}
+
+header nav[aria-label="Main Navigation"] .theme-toggle--desktop {
+  margin-left: -.25rem;
 }
 
 .header-github-link img {
