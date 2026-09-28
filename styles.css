@@ -4741,8 +4741,8 @@ summary:active {
   font-size: 1.0625rem;
   line-height: 1.35;
   font-weight: 700;
-  letter-spacing: .035em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 .docs-navigation nav a {
   display: flex;
@@ -5400,7 +5400,6 @@ html[data-theme="dark"] .cli-secondary {
 .roadmap-flow li,
 .roadmap-boundaries__panel,
 .docs-search__results,
-.docs-navigation,
 .docs-flow > span,
 .docs-principles li,
 .docs-facts > div,
