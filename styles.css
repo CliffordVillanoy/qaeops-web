@@ -3889,16 +3889,22 @@ html[data-theme="dark"] .about-principle__icon img {
   max-width: 68ch;
   color: var(--ui-ink-muted);
 }
+.about-page .about-workflows {
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
+}
+.about-workflows .about-section__heading {
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
+}
 .about-use-cases {
   display: grid;
-  gap: 1rem;
+  gap: .75rem;
 }
 .about-use-case {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 1rem;
-  min-height: 14.5rem;
-  padding: clamp(1.25rem, 3vw, 1.75rem);
+  gap: .875rem;
+  min-height: 0;
+  padding: 1.25rem;
   border: 1px solid var(--ui-border);
   border-radius: 1rem;
   background: var(--ui-surface);
@@ -3914,10 +3920,10 @@ html[data-theme="dark"] .about-principle__icon img {
   background: #e9e8ff;
 }
 .about-use-case h3 {
-  margin: .15rem 0 .625rem;
+  margin: .1rem 0 .5rem;
 }
 .about-use-case p {
-  margin: 0 0 1.125rem;
+  margin: 0 0 .75rem;
   color: var(--ui-ink-muted);
 }
 .about-use-case a {
@@ -4104,6 +4110,7 @@ html[data-theme="dark"] .about-principle__icon img {
 @media (min-width: 720px) {
   .about-use-cases {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
   }
 }
 @media (min-width: 960px) {
