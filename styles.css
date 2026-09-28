@@ -3783,7 +3783,7 @@ header > div.max-w-7xl {
   }
   .overview-architecture li:not(:last-child)::after {
     top: 50%;
-    right: -1.45rem;
+    right: calc(-1.75rem / 2 - 1.25rem / 2);
     left: auto;
     transform: translateY(-50%);
   }
