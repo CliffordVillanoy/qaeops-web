@@ -4764,6 +4764,34 @@ summary:active {
   letter-spacing: 0;
   text-transform: none;
 }
+.docs-nav-section {
+  margin: 0;
+}
+.docs-nav-section + .docs-nav-section {
+  margin-top: .625rem;
+}
+.docs-navigation .docs-nav-section > summary {
+  min-height: 2.75rem;
+  padding: .75rem .625rem .5rem;
+  color: var(--ui-ink);
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.docs-navigation .docs-nav-section > summary::after {
+  width: .5rem;
+  height: .5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  color: var(--ui-ink-muted);
+  content: "";
+  transform: rotate(-45deg);
+  transition: transform 160ms var(--ui-ease);
+}
+.docs-navigation .docs-nav-section[open] > summary::after {
+  content: "";
+  transform: rotate(45deg);
+}
 .docs-navigation nav a {
   display: flex;
   align-items: center;
@@ -5055,7 +5083,7 @@ summary:active {
     background: transparent;
     box-shadow: none;
   }
-  .docs-navigation summary {
+  .docs-navigation > summary {
     display: none;
   }
   .docs-navigation > nav {
