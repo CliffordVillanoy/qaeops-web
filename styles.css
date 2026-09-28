@@ -4087,17 +4087,9 @@ html[data-theme="dark"] .about-principle__icon img {
   font-weight: 700;
 }
 .about-faq .cli-faq summary::after {
-  display: grid;
   flex: 0 0 auto;
-  place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  color: var(--ui-ink-muted);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
+  color: var(--ui-brand);
+  font-size: 1.25rem;
 }
 .about-faq .cli-faq > div {
   padding: 0 4rem 1.25rem 1.125rem;
