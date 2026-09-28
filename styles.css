@@ -5369,6 +5369,7 @@ header a[aria-label="QAEOps home"],
 .nav-link,
 .nav-link:hover {
   color: var(--ui-ink);
+  font-weight: 550;
   text-decoration: none;
 }
 
@@ -5376,6 +5377,10 @@ header a[aria-label="QAEOps home"],
 .nav-link[aria-current="location"] {
   color: var(--ui-brand);
   text-decoration: none;
+}
+
+html[data-home-entry="logo"] .nav-link[aria-current="page"] {
+  color: var(--ui-ink);
 }
 
 .cli-primary {
