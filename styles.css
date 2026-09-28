@@ -3976,7 +3976,7 @@ html[data-theme="dark"] .about-principle__icon img {
   display: grid;
   grid-template-columns: 3rem minmax(0, 1fr);
   gap: 1rem;
-  align-items: start;
+  align-items: center;
   margin-bottom: 1.25rem;
 }
 .about-audiences__icon {
