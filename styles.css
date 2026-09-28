@@ -4115,8 +4115,8 @@ html[data-theme="dark"] .about-principle__icon img {
   }
   .about-page .about-faq {
     display: grid;
-    grid-template-columns: minmax(18rem, .75fr) minmax(0, 1.25fr);
-    gap: clamp(3rem, 7vw, 6rem);
+    grid-template-columns: minmax(18rem, 20rem) minmax(0, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: start;
   }
   .about-faq .about-section__heading {
