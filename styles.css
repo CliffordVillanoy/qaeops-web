@@ -5354,6 +5354,14 @@ header a[aria-label="QAEOps home"],
   color: var(--ui-brand);
 }
 
+.cli-section .docs-navigation nav a:not([aria-current="location"]) {
+  color: var(--ui-ink);
+}
+
+.cli-section .docs-navigation nav a:hover {
+  color: var(--ui-brand);
+}
+
 .nav-link::after {
   background: var(--ui-brand);
 }
