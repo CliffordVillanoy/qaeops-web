@@ -277,6 +277,17 @@
   function buildDocumentationSearch() {
     if (!docsSearch || !docsSearchInput || !docsSearchResults || !docsSearchStatus) return;
 
+    if (!docsLinks.length || !docsSections.length) {
+      docsSearch.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = docsSearchInput.value.trim();
+        if (!query) return;
+        const target = docsSearch.dataset.searchTarget || 'documentation/index.html';
+        window.location.assign(`${target}?search=${encodeURIComponent(query)}`);
+      });
+      return;
+    }
+
     const searchIndex = docsLinks.map((link) => {
       const section = document.getElementById(link.hash.slice(1));
       let group = 'Documentation';
@@ -406,6 +417,13 @@
     document.addEventListener('click', (event) => {
       if (!docsSearch.contains(event.target)) closeResults();
     });
+
+    const initialQuery = new URLSearchParams(window.location.search).get('search')?.trim();
+    if (initialQuery) {
+      docsSearchInput.value = initialQuery;
+      renderResults();
+      docsSearchInput.focus();
+    }
   }
 
   function buildDocumentationPagination() {
