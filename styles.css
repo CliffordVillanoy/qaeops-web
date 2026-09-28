@@ -5029,6 +5029,7 @@ summary:active {
   }
   .docs-navigation {
     overflow: visible;
+    padding-top: .5rem;
     border: 0;
     border-radius: 0;
     background: transparent;
