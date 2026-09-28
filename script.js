@@ -131,9 +131,7 @@
   const menu = document.getElementById('mobile-menu-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
   const wide = window.matchMedia('(min-width: 1280px)');
-  const docsWide = window.matchMedia('(min-width: 960px)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const docsNavigation = document.querySelector('.docs-navigation');
   const docsLinks = [...document.querySelectorAll('.docs-navigation nav a')];
   const docsSections = [...document.querySelectorAll('.docs-topic')];
   const breadcrumbGroup = document.getElementById('docs-breadcrumb-group');
@@ -243,7 +241,6 @@
     if (!target) return;
     event.preventDefault();
     if (drawer?.contains(link)) setMenu(false);
-    if (docsNavigation?.contains(link) && !docsWide.matches) docsNavigation.open = false;
     window.history.pushState(null, '', link.hash);
     renderDocumentationTopic();
     window.requestAnimationFrame(() => focusAndScrollTo(target));

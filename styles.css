@@ -4725,11 +4725,10 @@ summary:active {
   line-height: 1.5;
 }
 .docs-navigation {
-  overflow: hidden;
-  border: 1px solid var(--ui-border);
-  border-radius: var(--ui-radius-md);
-  background: var(--ui-surface);
-  box-shadow: var(--ui-shadow-sm);
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 .docs-navigation summary {
   display: flex;
@@ -4752,8 +4751,8 @@ summary:active {
   content: "−";
 }
 .docs-navigation nav {
-  padding: 0 .625rem .75rem;
-  border-top: 1px solid var(--ui-border);
+  padding: 0;
+  border-top: 0;
 }
 .docs-nav-group {
   margin: 1.375rem .625rem .5rem;
