@@ -4040,14 +4040,14 @@ html[data-theme="dark"] .about-principle__icon img {
 }
 .about-faq__list {
   display: grid;
-  gap: .75rem;
+  gap: .625rem;
   width: 100%;
-  max-width: 60rem;
+  max-width: 44rem;
   margin-inline: auto;
 }
 
 .about-page .about-faq {
-  max-width: 64rem;
+  max-width: 80rem;
   padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
@@ -4067,27 +4067,40 @@ html[data-theme="dark"] .about-principle__icon img {
   margin: 0;
   padding: 0;
   border: 1px solid var(--ui-border);
-  border-radius: 1rem;
+  border-radius: .875rem;
   background: var(--ui-surface);
   box-shadow: var(--ui-shadow-sm);
+  transition: border-color 160ms var(--ui-ease), background-color 160ms var(--ui-ease), box-shadow 160ms var(--ui-ease);
+}
+.about-faq .cli-faq:hover {
+  border-color: var(--ui-border-strong);
 }
 .about-faq .cli-faq[open] {
-  border-color: #b9b5ef;
-  box-shadow: 0 8px 24px rgba(16, 24, 40, .07);
+  border-color: var(--ui-border-strong);
+  box-shadow: var(--ui-shadow-md);
 }
 .about-faq .cli-faq summary {
-  min-height: 3.75rem;
-  padding: 1rem 1.25rem;
+  min-height: 4rem;
+  padding: 1rem 1.125rem;
   border-radius: inherit;
   color: var(--ui-ink);
   font-weight: 700;
 }
 .about-faq .cli-faq summary::after {
+  display: grid;
   flex: 0 0 auto;
-  font-size: 1.25rem;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--ui-ink-muted);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
 }
 .about-faq .cli-faq > div {
-  padding: 0 1.25rem 1.125rem;
+  padding: 0 4rem 1.25rem 1.125rem;
 }
 .about-faq .cli-faq p {
   margin: 0;
@@ -4107,6 +4120,31 @@ html[data-theme="dark"] .about-principle__icon img {
   }
   .about-audiences {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .about-page .about-faq {
+    display: grid;
+    grid-template-columns: minmax(18rem, .75fr) minmax(0, 1.25fr);
+    gap: clamp(3rem, 7vw, 6rem);
+    align-items: start;
+  }
+  .about-faq .about-section__heading {
+    margin: 0;
+    text-align: left;
+  }
+  .about-faq .about-section__heading h2,
+  .about-faq .about-section__heading > p:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .about-faq .about-section__heading h2 {
+    max-width: 17ch;
+  }
+  .about-faq .about-section__heading > p:last-child {
+    max-width: 30ch;
+  }
+  .about-faq__list {
+    max-width: none;
+    margin: 0;
   }
 }
 
