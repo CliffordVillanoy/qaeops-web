@@ -4132,7 +4132,7 @@ html[data-theme="dark"] .about-principle__icon img {
     max-width: 17ch;
   }
   .about-faq .about-section__heading > p:last-child {
-    max-width: 30ch;
+    max-width: 40ch;
   }
   .about-faq__list {
     max-width: none;
