@@ -2545,7 +2545,7 @@ header a[aria-label="QAEOps home"] {
     padding-inline: 2rem;
   }
   .site-footer__bottom {
-    padding-inline: 1.25rem;
+    padding-inline: max(2rem, calc((100% - 80rem) / 2 + 2rem));
   }
 }
 @media (min-width: 672px) { .cli-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
