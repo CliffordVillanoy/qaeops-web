@@ -2495,6 +2495,7 @@ header a[aria-label="QAEOps home"] {
   outline-color: #f8f9ff;
 }
 .site-footer__bottom {
+  max-width: 90rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4556,7 +4557,7 @@ summary:active {
 .docs-search {
   position: relative;
   z-index: 20;
-  margin-bottom: 1.25rem;
+  margin-bottom: .875rem;
 }
 .docs-search__label {
   position: absolute;
@@ -4642,6 +4643,9 @@ summary:active {
   color: var(--ui-ink-muted);
   font-size: .75rem;
   line-height: 1.4;
+}
+.docs-search__status:empty {
+  display: none;
 }
 .docs-search__results {
   position: absolute;
