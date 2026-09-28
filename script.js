@@ -116,6 +116,46 @@
   const docsSearchResults = document.getElementById('docs-search-results');
   const docsSearchStatus = document.getElementById('docs-search-status');
 
+  document.querySelectorAll('.about-faq .cli-faq').forEach((details) => {
+    const summary = details.querySelector('summary');
+    const content = details.querySelector(':scope > div');
+    let animation;
+
+    if (!summary || !content) return;
+
+    summary.addEventListener('click', (event) => {
+      if (reducedMotion.matches) return;
+      event.preventDefault();
+      if (animation) return;
+
+      const shouldOpen = !details.open;
+      const startHeight = details.offsetHeight;
+
+      delete details.dataset.closing;
+
+      if (shouldOpen) details.open = true;
+      else details.dataset.closing = 'true';
+
+      const endHeight = shouldOpen
+        ? details.offsetHeight
+        : startHeight - content.offsetHeight;
+
+      details.style.overflow = 'hidden';
+      animation = details.animate(
+        { height: [`${startHeight}px`, `${endHeight}px`] },
+        { duration: 220, easing: 'cubic-bezier(.2, .8, .2, 1)' },
+      );
+
+      animation.addEventListener('finish', () => {
+        if (!shouldOpen) details.open = false;
+        delete details.dataset.closing;
+        details.style.removeProperty('overflow');
+        details.style.removeProperty('height');
+        animation = undefined;
+      }, { once: true });
+    });
+  });
+
   function setMenu(open) {
     if (!menu || !drawer) return;
     drawer.hidden = !open;
