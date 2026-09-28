@@ -4584,6 +4584,27 @@ summary:active {
   width: 15rem;
   margin: 0 0 0 .25rem;
 }
+@media (max-width: 1119px) {
+  .docs-header-search {
+    margin-right: .5rem;
+    margin-left: auto;
+  }
+}
+@media (max-width: 639px) {
+  .docs-header-search {
+    flex-basis: 44px;
+    width: 44px;
+  }
+  .docs-header-search input {
+    padding-inline: 2.6rem .5rem;
+  }
+  .docs-header-search input::placeholder {
+    color: transparent;
+  }
+  .docs-header-search .docs-search__shortcut {
+    display: none;
+  }
+}
 .docs-header-search input {
   min-height: 2.75rem;
 }
@@ -5322,6 +5343,7 @@ html[data-theme="dark"] {
 
 header nav[aria-label="Main Navigation"] {
   gap: clamp(1rem, 1.25vw, 1.25rem);
+  margin-left: auto;
 }
 
 .header-github-link img {
