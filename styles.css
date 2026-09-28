@@ -2512,9 +2512,12 @@ header a[aria-label="QAEOps home"] {
 .site-footer__bottom p {
   margin: 0;
 }
-.site-footer__legal {
+.site-footer__bottom .site-footer__legal {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  white-space: nowrap;
 }
 .site-footer__legal a {
   color: inherit;
