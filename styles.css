@@ -2512,6 +2512,20 @@ header a[aria-label="QAEOps home"] {
 .site-footer__bottom p {
   margin: 0;
 }
+.site-footer__legal {
+  display: flex;
+  gap: 1rem;
+}
+.site-footer__legal a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer__legal a:hover,
+.site-footer__legal a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
 @media (min-width: 672px) {
   .site-footer__inner {
     grid-template-columns: minmax(16rem, 2fr) repeat(2, minmax(9rem, 1fr));
@@ -2520,7 +2534,7 @@ header a[aria-label="QAEOps home"] {
   .site-footer__bottom {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 @media (min-width: 1024px) {
