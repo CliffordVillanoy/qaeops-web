@@ -2502,7 +2502,7 @@ header a[aria-label="QAEOps home"] {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-block: 1.5rem;
+  padding: 1.5rem 1.25rem;
   border-top: 1px solid #505081;
   color: #d9d8ff;
   font-size: .875rem;
@@ -2541,9 +2541,11 @@ header a[aria-label="QAEOps home"] {
   }
 }
 @media (min-width: 1024px) {
-  .site-footer__inner,
-  .site-footer__bottom {
+  .site-footer__inner {
     padding-inline: 2rem;
+  }
+  .site-footer__bottom {
+    padding-inline: 1.25rem;
   }
 }
 @media (min-width: 672px) { .cli-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
