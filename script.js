@@ -130,7 +130,7 @@
 
   const menu = document.getElementById('mobile-menu-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
-  const wide = window.matchMedia('(min-width: 1280px)');
+  const wide = window.matchMedia('(min-width: 1120px)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const docsLinks = [...document.querySelectorAll('.docs-navigation nav a')];
   const docsSections = [...document.querySelectorAll('.docs-topic')];

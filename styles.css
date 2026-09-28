@@ -2737,7 +2737,7 @@ summary::-webkit-details-marker {
   color: #94a3b8;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1119px) {
   header nav[aria-label="Main Navigation"] {
     display: none;
   }
@@ -3397,7 +3397,7 @@ main {
     left: 0;
   }
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1119px) {
   header nav[aria-label="Main Navigation"] {
     display: none;
   }
@@ -5405,7 +5405,7 @@ html[data-theme="dark"] .theme-toggle__icon--sun {
   gap: .5rem;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1120px) {
   .mobile-header-actions {
     display: none;
   }
