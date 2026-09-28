@@ -5363,7 +5363,19 @@ header a[aria-label="QAEOps home"],
 }
 
 .nav-link::after {
-  background: var(--ui-brand);
+  display: none;
+}
+
+.nav-link,
+.nav-link:hover {
+  color: var(--ui-ink);
+  text-decoration: none;
+}
+
+.nav-link[aria-current="page"],
+.nav-link[aria-current="location"] {
+  color: var(--ui-brand);
+  text-decoration: none;
 }
 
 .cli-primary {
