@@ -4055,6 +4055,7 @@ html[data-theme="dark"] .about-principle__icon img {
 .about-page .about-faq {
   max-width: 80rem;
   margin-top: -2rem;
+  margin-bottom: 1.5rem;
   padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
@@ -4127,6 +4128,7 @@ html[data-theme="dark"] .about-principle__icon img {
     gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: start;
     margin-top: -3rem;
+    margin-bottom: 2rem;
   }
   .about-faq .about-section__heading {
     margin: 0;
