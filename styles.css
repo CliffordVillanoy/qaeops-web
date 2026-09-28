@@ -4579,6 +4579,28 @@ summary:active {
   z-index: 20;
   margin-bottom: .875rem;
 }
+.docs-header-search {
+  flex: 0 0 15rem;
+  width: 15rem;
+  margin: 0 0 0 .25rem;
+}
+.docs-header-search input {
+  min-height: 2.75rem;
+}
+.docs-header-search .docs-search__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.docs-header-search .docs-search__results {
+  right: 0;
+  left: auto;
+}
 .docs-search__label {
   position: absolute;
   width: 1px;
