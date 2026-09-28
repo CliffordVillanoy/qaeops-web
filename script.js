@@ -143,8 +143,26 @@
       details.style.overflow = 'hidden';
       animation = details.animate(
         { height: [`${startHeight}px`, `${endHeight}px`] },
-        { duration: 220, easing: 'cubic-bezier(.2, .8, .2, 1)' },
+        {
+          duration: shouldOpen ? 420 : 240,
+          easing: 'cubic-bezier(.2, .8, .2, 1)',
+        },
       );
+
+      if (shouldOpen) {
+        content.animate(
+          [
+            { opacity: 0, transform: 'translateY(-.35rem)' },
+            { opacity: 1, transform: 'translateY(0)' },
+          ],
+          {
+            duration: 360,
+            delay: 60,
+            easing: 'cubic-bezier(.2, .8, .2, 1)',
+            fill: 'backwards',
+          },
+        );
+      }
 
       animation.addEventListener('finish', () => {
         if (!shouldOpen) details.open = false;
