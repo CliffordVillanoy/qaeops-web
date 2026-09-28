@@ -4054,6 +4054,7 @@ html[data-theme="dark"] .about-principle__icon img {
 
 .about-page .about-faq {
   max-width: 80rem;
+  margin-top: -2rem;
   padding-block: clamp(3rem, 5vw, 4.5rem);
 }
 
@@ -4125,6 +4126,7 @@ html[data-theme="dark"] .about-principle__icon img {
     grid-template-columns: minmax(18rem, 20rem) minmax(0, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     align-items: start;
+    margin-top: -3rem;
   }
   .about-faq .about-section__heading {
     margin: 0;
