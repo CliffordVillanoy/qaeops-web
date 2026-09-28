@@ -2495,7 +2495,8 @@ header a[aria-label="QAEOps home"] {
   outline-color: #f8f9ff;
 }
 .site-footer__bottom {
-  max-width: 90rem;
+  width: calc(100% - 3rem);
+  max-width: none;
   display: flex;
   flex-direction: column;
   align-items: center;
