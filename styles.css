@@ -4621,8 +4621,15 @@ summary:active {
   right: .75rem;
   display: inline-flex;
   align-items: center;
+  gap: .25rem;
+  pointer-events: none;
+}
+.docs-search__shortcut kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.75rem;
   min-height: 1.75rem;
-  padding-inline: .5rem;
+  padding-inline: .375rem;
   border: 1px solid var(--ui-border);
   border-radius: .375rem;
   color: var(--ui-ink-muted);
@@ -4630,7 +4637,6 @@ summary:active {
   font-family: var(--font-ui);
   font-size: .6875rem;
   line-height: 1;
-  pointer-events: none;
 }
 .docs-search__control:has(#docs-search-clear:not([hidden])) .docs-search__shortcut {
   display: none;
