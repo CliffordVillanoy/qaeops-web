@@ -4605,7 +4605,7 @@ summary:active {
 .docs-search input {
   width: 100%;
   min-height: 3rem;
-  padding: .7rem 2.75rem .7rem 2.6rem;
+  padding: .7rem 5rem .7rem 2.6rem;
   border: 1px solid var(--ui-border);
   border-radius: .75rem;
   color: var(--ui-ink);
@@ -4615,6 +4615,25 @@ summary:active {
   font-size: .875rem;
   line-height: 1.4;
   transition: border-color var(--interaction-duration) var(--ui-ease), box-shadow var(--interaction-duration) var(--ui-ease);
+}
+.docs-search__shortcut {
+  position: absolute;
+  right: .75rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  padding-inline: .5rem;
+  border: 1px solid var(--ui-border);
+  border-radius: .375rem;
+  color: var(--ui-ink-muted);
+  background: var(--ui-surface-soft);
+  font-family: var(--font-ui);
+  font-size: .6875rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.docs-search__control:has(#docs-search-clear:not([hidden])) .docs-search__shortcut {
+  display: none;
 }
 .docs-search input::placeholder {
   color: var(--ui-ink-muted);

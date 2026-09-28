@@ -219,7 +219,12 @@
   wide.addEventListener('change', resizeNavigation);
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && drawer && !drawer.hidden) {
+    if (event.ctrlKey && !event.altKey && !event.metaKey && !event.shiftKey
+      && event.key.toLowerCase() === 'q' && docsSearchInput) {
+      event.preventDefault();
+      docsSearchInput.focus();
+      docsSearchInput.select();
+    } else if (event.key === 'Escape' && drawer && !drawer.hidden) {
       setMenu(false);
       menu.focus();
     }
