@@ -3135,7 +3135,7 @@ main {
   right: 1rem;
   bottom: 1.5rem;
   left: 1rem;
-  border: 1px solid #e3e7f0;
+  border: 0;
   border-radius: var(--ui-radius-lg);
   background: rgb(255 255 255 / .58);
   content: "";
