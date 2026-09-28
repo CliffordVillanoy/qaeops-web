@@ -5341,8 +5341,9 @@ html[data-theme="dark"] {
   background: transparent;
 }
 
-header nav[aria-label="Main Navigation"] {
-  gap: .5rem;
+.site-primary-nav {
+  column-gap: .5rem !important;
+  row-gap: 0;
   margin-left: auto;
 }
 
