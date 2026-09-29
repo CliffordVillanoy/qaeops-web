@@ -5749,7 +5749,7 @@ html[data-theme="dark"] .cli-secondary {
 }
 
 .docs-search input:focus {
-  border-color: var(--ui-focus);
+  border-color: transparent;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--ui-focus) 28%, transparent);
 }
 
