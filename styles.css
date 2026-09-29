@@ -2557,7 +2557,7 @@ header a[aria-label="QAEOps home"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   white-space: nowrap;
 }
 .site-footer__legal a {
