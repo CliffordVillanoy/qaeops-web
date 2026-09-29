@@ -210,6 +210,11 @@
   max-width: none;
 }
 
+.inline-command {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
 .docs-next {
   margin-top: 2rem;
   padding-top: 1.5rem;
