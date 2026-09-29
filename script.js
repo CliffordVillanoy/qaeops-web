@@ -81,6 +81,9 @@
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setBlinking(true);
           });
           host.addEventListener('mouseleave', () => setBlinking(false));
+          if (host.matches(':hover') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setBlinking(true);
+          }
           host.dataset.logoBlink = 'ready';
         });
       })

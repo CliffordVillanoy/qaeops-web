@@ -8,8 +8,8 @@
       animation: qaeops-blink-tilt 4s ease-in-out infinite;
     }
     @keyframes qaeops-blink-tilt {
-      0%, 78%, 86%, 100% { transform: rotate(-8.53deg) scaleY(1) rotate(8.53deg); }
-      82%, 92% { transform: rotate(-8.53deg) scaleY(0.05) rotate(8.53deg); }
+      0%, 10%, 84%, 94%, 100% { transform: rotate(-8.53deg) scaleY(1) rotate(8.53deg); }
+      5%, 89% { transform: rotate(-8.53deg) scaleY(0.05) rotate(8.53deg); }
     }
   </style>
   <g id="robot-mark" transform="translate(78.6 78.6) scale(0.50785)"><defs>
