@@ -316,6 +316,7 @@
           <input type="search" aria-label="Search documentation" placeholder="Search documentation" autocomplete="off" aria-controls="docs-search-dialog-results" aria-expanded="false">
           <div class="docs-search-dialog__actions">
             <button type="button" class="docs-search-dialog__clear" aria-label="Clear search" disabled><img src="${clearIcon}" alt="" width="20" height="20" aria-hidden="true"></button>
+            <span class="docs-search-dialog__action-divider" aria-hidden="true"></span>
             <button type="button" class="docs-search-dialog__close" aria-label="Close search">×</button>
           </div>
         </div>

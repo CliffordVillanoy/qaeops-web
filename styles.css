@@ -5922,7 +5922,12 @@ html[data-theme="dark"] .docs-search-dialog__control > img {
   right: .75rem;
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: .25rem;
+}
+.docs-search-dialog__action-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: var(--ui-border);
 }
 .docs-search-dialog__clear,
 .docs-search-dialog__close {
@@ -5939,6 +5944,7 @@ html[data-theme="dark"] .docs-search-dialog__control > img {
   cursor: pointer;
 }
 .docs-search-dialog__clear img {
+  display: block;
   width: 1.25rem;
   height: 1.25rem;
   opacity: .72;
