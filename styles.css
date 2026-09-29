@@ -206,7 +206,7 @@
   background: transparent;
 }
 
-.docs-facts--plain p {
+.cli-section .docs-facts--plain p {
   max-width: none;
 }
 
