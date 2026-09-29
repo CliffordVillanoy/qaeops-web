@@ -183,6 +183,23 @@
   margin: 0;
 }
 
+.docs-facts--plain {
+  display: block;
+}
+
+.docs-facts--plain > div {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.docs-topic .docs-facts--plain h3 {
+  margin: 1.5rem 0 .75rem;
+  font-size: 1.25rem;
+}
+
 .docs-next {
   margin-top: 2rem;
   padding-top: 1.5rem;
