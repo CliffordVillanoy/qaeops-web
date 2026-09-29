@@ -2407,8 +2407,8 @@ header a[aria-label="QAEOps home"]:focus:not(:focus-visible) {
   display: block;
   flex: 0 0 10rem;
   width: 10rem;
-  height: 4rem;
-  overflow: hidden;
+  height: 3.5rem;
+  overflow: visible;
 }
 
 .qaeops-nav-logo img,
