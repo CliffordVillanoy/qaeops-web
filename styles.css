@@ -200,6 +200,11 @@
   font-size: 1.25rem;
 }
 
+.docs-facts.docs-facts--plain > div {
+  border-color: transparent;
+  background: transparent;
+}
+
 .docs-next {
   margin-top: 2rem;
   padding-top: 1.5rem;
