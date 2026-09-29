@@ -197,7 +197,8 @@
 
 .docs-topic .docs-facts--plain h3 {
   margin: 1.5rem 0 .75rem;
-  font-size: 1.25rem;
+  font-size: var(--type-h3);
+  line-height: 1.35;
 }
 
 .docs-facts.docs-facts--plain > div {
