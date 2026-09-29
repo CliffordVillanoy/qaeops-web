@@ -206,6 +206,10 @@
   background: transparent;
 }
 
+.docs-facts--plain p {
+  max-width: none;
+}
+
 .docs-next {
   margin-top: 2rem;
   padding-top: 1.5rem;
