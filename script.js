@@ -64,7 +64,18 @@
           const host = logo.parentElement;
           const shadow = host.attachShadow({ mode: 'open' });
           shadow.innerHTML = `${logoMarkup}<style>
-            svg { display: block; width: 100%; height: 100%; }
+            svg {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              display: block;
+              width: 12.5rem;
+              height: 5.125rem;
+              transform: translate(-50%, -50%);
+            }
+            @media (max-width: 639px) {
+              svg { width: 8.75rem; height: 3.5rem; }
+            }
           </style>`;
 
           const svg = shadow.querySelector('svg');
