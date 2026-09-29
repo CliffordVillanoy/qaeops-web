@@ -5743,7 +5743,7 @@ html[data-theme="dark"] .cli-secondary {
 }
 
 .docs-search input {
-  border-color: var(--ui-input-border);
+  border-color: transparent;
   color: var(--ui-ink);
   background: var(--ui-surface);
 }
