@@ -59,6 +59,7 @@
               svg { width: 8.75rem; height: 3.5rem; }
             }
             :host(.qaeops-footer-logo) svg {
+              left: calc(50% - .625rem);
               width: 10rem;
               height: 4.1rem;
             }
