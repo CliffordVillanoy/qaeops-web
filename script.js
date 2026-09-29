@@ -5,7 +5,7 @@
   const themeToggles = [...document.querySelectorAll('[data-theme-toggle]')];
   const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img')];
   const homeLogoLinks = [...document.querySelectorAll('header a[aria-label="QAEOps home"], .site-footer__logo')];
-  document.querySelectorAll('header .nav-link, header #mobile-nav-drawer a').forEach((link) => {
+  document.querySelectorAll('header .nav-link, header #mobile-nav-drawer a, footer a').forEach((link) => {
     if (link.textContent.trim() === 'Overview') link.remove();
   });
 
