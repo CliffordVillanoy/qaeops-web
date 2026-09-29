@@ -2405,12 +2405,10 @@ header a[aria-label="QAEOps home"]:focus:not(:focus-visible) {
 .qaeops-nav-logo {
   position: relative;
   display: block;
-  flex: 0 0 3.5rem;
-  width: 3.5rem;
+  flex: 0 0 8.75rem;
+  width: 8.75rem;
   height: 3.5rem;
   overflow: hidden;
-  border-radius: .625rem;
-  background: #fff;
 }
 
 .qaeops-nav-logo img,
@@ -2418,7 +2416,7 @@ header a[aria-label="QAEOps home"]:focus:not(:focus-visible) {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 3.5rem;
+  width: 8.75rem;
   height: 3.5rem;
   max-width: none;
   object-fit: contain;
