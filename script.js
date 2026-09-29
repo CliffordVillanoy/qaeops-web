@@ -241,14 +241,14 @@
       else link.removeAttribute('aria-current');
     });
     const topicTitle = activeSection.dataset.title || activeSection.querySelector('h2')?.textContent;
-    let topicGroup = 'Documentation';
+    let topicGroup = document.body.dataset.docsGroup || 'Documentation';
     for (const item of current.closest('nav').children) {
       if (item === current) break;
       if (item.classList.contains('docs-nav-group')) topicGroup = item.textContent.trim();
     }
     if (breadcrumbGroup) breadcrumbGroup.textContent = topicGroup;
     if (breadcrumbCurrent) breadcrumbCurrent.textContent = topicTitle;
-    document.title = 'Documentation | QAEOps';
+    document.title = document.body.dataset.pageTitle || 'Documentation | QAEOps';
   }
 
   let openDocumentationSearch = () => {};
