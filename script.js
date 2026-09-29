@@ -3,7 +3,7 @@
 (() => {
   const root = document.documentElement;
   const themeToggles = [...document.querySelectorAll('[data-theme-toggle]')];
-  const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img')];
+  const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img, .qaeops-footer-logo img')];
   const homeLogoLinks = [...document.querySelectorAll('header a[aria-label="QAEOps home"], .site-footer__logo')];
   document.querySelectorAll('header .nav-link, header #mobile-nav-drawer a, footer a').forEach((link) => {
     if (link.textContent.trim() === 'Overview') link.remove();
@@ -57,6 +57,13 @@
             }
             @media (max-width: 639px) {
               svg { width: 8.75rem; height: 3.5rem; }
+            }
+            :host(.qaeops-footer-logo) svg {
+              width: 10rem;
+              height: 4.1rem;
+            }
+            :host(.qaeops-footer-logo) #wordmark {
+              fill: #b8b5ff;
             }
             :host-context(html[data-theme="dark"]) #robot-tile {
               stroke: rgba(255, 255, 255, .82);
