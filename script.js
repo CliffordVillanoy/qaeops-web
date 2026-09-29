@@ -76,6 +76,13 @@
             @media (max-width: 639px) {
               svg { width: 8.75rem; height: 3.5rem; }
             }
+            :host-context(html[data-theme="dark"]) #robot-tile {
+              stroke: rgba(255, 255, 255, .82);
+              stroke-width: 12;
+            }
+            :host-context(html[data-theme="dark"]) #wordmark {
+              fill: #b8b5ff;
+            }
           </style>`;
 
           const svg = shadow.querySelector('svg');

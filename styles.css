@@ -2438,9 +2438,18 @@ header a[aria-label="QAEOps home"]:focus:not(:focus-visible) {
 }
 
 header a[aria-label="QAEOps home"] {
+  flex: 0 0 12.5rem;
+  width: 12.5rem;
   gap: .875rem;
   font-size: 1.75rem;
   line-height: 1.2;
+}
+
+@media (max-width: 639px) {
+  header a[aria-label="QAEOps home"] {
+    flex-basis: 8.75rem;
+    width: 8.75rem;
+  }
 }
 .site-footer__brand > p {
   max-width: 36ch;
