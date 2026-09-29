@@ -300,6 +300,8 @@
     if (!docsSearch || !docsSearchInput) return;
 
     const searchTarget = docsSearch.dataset.searchTarget || 'documentation/index.html';
+    const searchIcon = docsSearch.querySelector('.docs-search__icon')?.src || '';
+    const clearIcon = searchIcon ? new URL('delete-left-svgrepo-com.svg', searchIcon).href : '';
     let searchIndexPromise;
     let restoreFocus;
 
@@ -310,11 +312,14 @@
     dialog.innerHTML = `
       <div class="docs-search-dialog__panel">
         <div class="docs-search-dialog__control">
-          <img src="${docsSearch.querySelector('.docs-search__icon')?.src || ''}" alt="" width="22" height="22" aria-hidden="true">
+          <img src="${searchIcon}" alt="" width="22" height="22" aria-hidden="true">
           <input type="search" aria-label="Search documentation" placeholder="Search documentation" autocomplete="off" aria-controls="docs-search-dialog-results" aria-expanded="false">
-          <button type="button" class="docs-search-dialog__close" aria-label="Close search">×</button>
+          <div class="docs-search-dialog__actions">
+            <button type="button" class="docs-search-dialog__clear" aria-label="Clear search" disabled><img src="${clearIcon}" alt="" width="20" height="20" aria-hidden="true"></button>
+            <button type="button" class="docs-search-dialog__close" aria-label="Close search">×</button>
+          </div>
         </div>
-        <p class="docs-search-dialog__status" aria-live="polite">Type to search QAEOps documentation.</p>
+        <p class="docs-search-dialog__status" aria-live="polite"></p>
         <ul class="docs-search-dialog__results" id="docs-search-dialog-results" aria-label="Documentation search results" hidden></ul>
         <div class="docs-search-dialog__footer" aria-hidden="true">
           <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
@@ -327,6 +332,7 @@
     const modalInput = dialog.querySelector('input');
     const modalResults = dialog.querySelector('.docs-search-dialog__results');
     const modalStatus = dialog.querySelector('.docs-search-dialog__status');
+    const clearButton = dialog.querySelector('.docs-search-dialog__clear');
     const closeButton = dialog.querySelector('.docs-search-dialog__close');
 
     function buildIndex(source, baseUrl = '') {
@@ -440,12 +446,13 @@
     }
     async function renderResults() {
       const query = modalInput.value.trim().toLocaleLowerCase();
+      clearButton.disabled = !query;
       modalResults.replaceChildren();
       modalResults.hidden = true;
       modalInput.setAttribute('aria-expanded', 'false');
 
       if (!query) {
-        modalStatus.textContent = 'Type to search QAEOps documentation.';
+        modalStatus.textContent = '';
         return;
       }
 
@@ -489,7 +496,8 @@
       modalInput.value = '';
       modalResults.replaceChildren();
       modalResults.hidden = true;
-      modalStatus.textContent = 'Type to search QAEOps documentation.';
+      modalStatus.textContent = '';
+      clearButton.disabled = true;
       window.requestAnimationFrame(() => modalInput.focus());
       loadSearchIndex().catch(() => {});
     };
@@ -563,6 +571,11 @@
       }
     });
     modalResults.addEventListener('click', closeDialog);
+    clearButton.addEventListener('click', () => {
+      modalInput.value = '';
+      renderResults();
+      modalInput.focus();
+    });
     closeButton.addEventListener('click', closeDialog);
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog) closeDialog();
