@@ -5191,6 +5191,14 @@ html[data-theme="dark"] .docs-search__icon {
 .docs-topic .installation-steps {
   margin: .875rem 0 1.75rem;
 }
+.docs-topic .docs-inline-list {
+  max-width: none;
+  padding: .25rem 0 0 1.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
 .docs-topic .cli-list li:last-child,
 .docs-topic .installation-steps > li:last-child {
   margin-bottom: 0;
