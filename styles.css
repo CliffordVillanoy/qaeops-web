@@ -2529,8 +2529,8 @@ header a[aria-label="QAEOps home"] {
   text-underline-offset: .3rem;
 }
 .site-footer nav a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  color: #ffffff;
+  text-decoration: none;
 }
 .site-footer a:focus-visible {
   outline-color: #f8f9ff;
