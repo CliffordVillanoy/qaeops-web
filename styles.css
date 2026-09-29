@@ -2567,8 +2567,7 @@ header a[aria-label="QAEOps home"] {
 .site-footer__legal a:hover,
 .site-footer__legal a:focus-visible {
   color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: .2em;
+  text-decoration: none;
 }
 @media (min-width: 672px) {
   .site-footer__inner {
@@ -2576,9 +2575,16 @@ header a[aria-label="QAEOps home"] {
     gap: 3rem;
   }
   .site-footer__bottom {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: minmax(16rem, 2fr) repeat(2, minmax(9rem, 1fr));
+    column-gap: 3rem;
     align-items: center;
-    justify-content: space-between;
+    padding-inline: 1.5rem;
+    text-align: left;
+  }
+  .site-footer__bottom .site-footer__legal {
+    grid-column: 3;
+    justify-self: start;
   }
 }
 @media (min-width: 1024px) {
