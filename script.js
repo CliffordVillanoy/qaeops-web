@@ -112,6 +112,8 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const docsLinks = [...document.querySelectorAll('.docs-navigation nav a')];
   const docsSections = [...document.querySelectorAll('.docs-topic')];
+  const docsLayout = document.querySelector('.docs-layout');
+  const docsArticle = document.querySelector('.docs-article');
   const breadcrumbGroup = document.getElementById('docs-breadcrumb-group');
   const breadcrumbCurrent = document.getElementById('docs-breadcrumb-current');
   const docsSearch = document.querySelector('.docs-search');
@@ -216,6 +218,39 @@
     });
   }
 
+  let docsTopicOutline;
+
+  function buildDocumentationOutline() {
+    if (!docsLayout || !docsArticle) return;
+    docsTopicOutline = document.createElement('aside');
+    docsTopicOutline.className = 'docs-topic-outline';
+    docsTopicOutline.setAttribute('aria-label', 'On this topic');
+    docsTopicOutline.innerHTML = '<p>On this topic</p><nav></nav>';
+    docsArticle.after(docsTopicOutline);
+  }
+
+  function updateDocumentationOutline(activeSection) {
+    if (!docsTopicOutline) return;
+    const headings = [...activeSection.querySelectorAll('h2, h3, h4')]
+      .filter((heading) => heading !== activeSection.firstElementChild);
+    const navigation = docsTopicOutline.querySelector('nav');
+    const links = headings.map((heading, index) => {
+      if (!heading.id) {
+        const slug = heading.textContent.trim().toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, '');
+        heading.id = `${activeSection.id}-${slug || index + 1}`;
+      }
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent.trim();
+      if (heading.tagName === 'H4') link.className = 'docs-topic-outline__nested';
+      return link;
+    });
+    navigation.replaceChildren(...links);
+    docsTopicOutline.hidden = !links.length;
+  }
+
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href^="#"]');
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
@@ -235,7 +270,10 @@
       requestedId = 'setup-requirements';
       window.history.replaceState(null, '', '#setup-requirements');
     }
-    const activeSection = docsSections.find((section) => section.id === requestedId) || docsSections[0];
+    const requestedTarget = document.getElementById(requestedId);
+    const activeSection = docsSections.find((section) => section.id === requestedId)
+      || requestedTarget?.closest('.docs-topic')
+      || docsSections[0];
     const current = docsLinks.find((link) => link.hash === `#${activeSection.id}`) || docsLinks[0];
     docsSections.forEach((section) => {
       section.hidden = section !== activeSection;
@@ -252,6 +290,7 @@
     }
     if (breadcrumbGroup) breadcrumbGroup.textContent = topicGroup;
     if (breadcrumbCurrent) breadcrumbCurrent.textContent = topicTitle;
+    updateDocumentationOutline(activeSection);
     document.title = document.body.dataset.pageTitle || 'Documentation | QAEOps';
   }
 
@@ -664,13 +703,14 @@
   window.addEventListener('hashchange', () => {
     renderDocumentationTopic();
     const target = document.getElementById(window.location.hash.slice(1));
-    const focusTarget = docsSections.length
-      ? docsSections.find((section) => !section.hidden)?.querySelector('h2')
-      : target;
+    const focusTarget = target && !target.classList.contains('docs-topic')
+      ? target
+      : docsSections.find((section) => !section.hidden)?.querySelector('h1, h2') || target;
     if (focusTarget) window.requestAnimationFrame(() => focusAndScrollTo(focusTarget));
   });
 
   resizeNavigation();
+  buildDocumentationOutline();
   buildDocumentationSearch();
   buildCodeCopyButtons();
   buildDocumentationPagination();
