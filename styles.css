@@ -4980,9 +4980,9 @@ html[data-theme="dark"] .docs-search__icon {
 .docs-flow {
   display: grid;
   justify-items: stretch;
-  gap: .75rem;
+  gap: .875rem;
   margin: .875rem 0 1.75rem;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid var(--ui-border);
   border-radius: 1rem;
   background: linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(239, 239, 255, .7));
@@ -4992,7 +4992,7 @@ html[data-theme="dark"] .docs-search__icon {
 .docs-flow > span {
   display: grid;
   place-items: center;
-  min-height: 3.5rem;
+  min-height: 4rem;
   padding: .75rem 1rem;
   border: 1px solid var(--ui-border);
   border-radius: .75rem;
@@ -5065,7 +5065,7 @@ html[data-theme="dark"] .docs-search__icon {
 
 @media (min-width: 768px) {
   .docs-flow {
-    grid-template-columns: minmax(0, 1.2fr) auto minmax(0, .8fr) auto minmax(0, 1.35fr) auto minmax(0, 1.35fr);
+    grid-template-columns: minmax(0, 1fr) 1.125rem minmax(0, 1fr) 1.125rem minmax(0, 1fr) 1.125rem minmax(0, 1fr);
     align-items: center;
   }
 
