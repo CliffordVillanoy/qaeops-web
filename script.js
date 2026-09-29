@@ -230,7 +230,11 @@
 
   function renderDocumentationTopic() {
     if (!docsLinks.length || !docsSections.length) return;
-    const requestedId = window.location.hash.slice(1);
+    let requestedId = window.location.hash.slice(1);
+    if (document.body.dataset.docsGroup === 'Setup' && requestedId === 'setup-prerequisites') {
+      requestedId = 'setup-requirements';
+      window.history.replaceState(null, '', '#setup-requirements');
+    }
     const activeSection = docsSections.find((section) => section.id === requestedId) || docsSections[0];
     const current = docsLinks.find((link) => link.hash === `#${activeSection.id}`) || docsLinks[0];
     docsSections.forEach((section) => {
@@ -673,6 +677,13 @@
   renderDocumentationTopic();
   document.body.classList.add('docs-ready');
 })();
-if (window.location.pathname.endsWith('/index.html')) {
-  window.history.replaceState(null, '', window.location.href.replace(/index\.html(?=([?#]|$))/, ''));
+const cleanPageUrl = new URL(window.location.href);
+if (cleanPageUrl.pathname.endsWith('/index.html')) {
+  cleanPageUrl.pathname = cleanPageUrl.pathname.replace(/index\.html$/, '');
+}
+if (cleanPageUrl.pathname.endsWith('/setup/') && cleanPageUrl.searchParams.has('v')) {
+  cleanPageUrl.searchParams.delete('v');
+}
+if (cleanPageUrl.href !== window.location.href) {
+  window.history.replaceState(null, '', cleanPageUrl);
 }
