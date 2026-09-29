@@ -5,31 +5,13 @@
   const themeToggles = [...document.querySelectorAll('[data-theme-toggle]')];
   const brandLogos = [...document.querySelectorAll('.qaeops-nav-logo img')];
   const homeLogoLinks = [...document.querySelectorAll('header a[aria-label="QAEOps home"], .site-footer__logo')];
-  const primaryNavLinks = [...document.querySelectorAll('.nav-link, #mobile-nav-drawer a')];
-
-  try {
-    const activeLink = document.querySelector('.nav-link[aria-current="page"]');
-    if (sessionStorage.getItem('qaeops-home-entry') === 'logo'
-      && activeLink?.textContent.trim() === 'Overview') {
-      root.dataset.homeEntry = 'logo';
-    }
-  } catch {}
+  document.querySelectorAll('header .nav-link, header #mobile-nav-drawer a').forEach((link) => {
+    if (link.textContent.trim() === 'Overview') link.remove();
+  });
 
   homeLogoLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      root.dataset.homeEntry = 'logo';
-      try {
-        sessionStorage.setItem('qaeops-home-entry', 'logo');
-      } catch {}
-    });
-  });
-
-  primaryNavLinks.forEach((link) => {
-    link.addEventListener('click', () => {
       delete root.dataset.homeEntry;
-      try {
-        sessionStorage.removeItem('qaeops-home-entry');
-      } catch {}
     });
   });
 

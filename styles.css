@@ -5532,10 +5532,6 @@ header a[aria-label="QAEOps home"],
   text-decoration: none;
 }
 
-html[data-home-entry="logo"] .nav-link[aria-current="page"] {
-  color: var(--ui-ink);
-}
-
 .cli-primary {
   border-color: var(--ui-brand);
   color: var(--ui-primary-text);
