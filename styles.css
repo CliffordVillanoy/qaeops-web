@@ -5243,6 +5243,9 @@ html[data-theme="dark"] .docs-search__icon {
     padding-right: .75rem;
     scrollbar-width: thin;
   }
+  body[data-docs-group="Setup"] .docs-sidebar {
+    max-height: min(calc(100vh - 7.5rem), 42rem);
+  }
   .docs-navigation {
     overflow: visible;
     padding-top: .5rem;
