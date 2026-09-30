@@ -5290,6 +5290,18 @@ html[data-theme="dark"] .docs-search__icon {
 .docs-topic .installation-steps {
   margin: .875rem 0 1.75rem;
 }
+.docs-topic .docs-learning-list {
+  max-width: none;
+  padding: .25rem 0 .25rem 1.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.docs-topic .docs-learning-list li {
+  margin-bottom: .5rem;
+  line-height: 1.65;
+}
 #quick-start .installation-steps {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
