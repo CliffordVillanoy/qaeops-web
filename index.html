@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=optional"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block">
   <script src="theme-init.js"></script>
-  <link rel="stylesheet" href="styles.css?v=20261001-1">
+  <link rel="stylesheet" href="styles.css?v=20261001-2">
   <script src="script.js?v=20261001-1" defer></script>
 </head>
 <body class="home-page bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen">
@@ -32,9 +32,15 @@
         <ul class="overview-summary" aria-label="QAEOps product summary"><li><span class="material-symbols-outlined" aria-hidden="true">terminal</span><span><strong>CLI interface</strong> for focused testing workflows</span></li><li><span class="material-symbols-outlined" aria-hidden="true">dns</span><span><strong>Local provider</strong> through LM Studio</span></li><li><span class="material-symbols-outlined" aria-hidden="true">person_check</span><span><strong>Professional review</strong> remains required</span></li></ul>
       </div>
       <div class="overview-terminal" aria-label="Example QAEOps command workflow">
-        <div class="overview-terminal__bar"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><p>QAEOps CLI</p></div>
-        <div class="overview-terminal__body"><p><span aria-hidden="true">$</span> <code>qae doctor</code></p><p class="overview-terminal__result"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Check workspace and local provider readiness</p><p><span aria-hidden="true">$</span> <code>qae analyze requirements.md</code></p><p class="overview-terminal__result"><span class="material-symbols-outlined" aria-hidden="true">description</span>Prepare a structured requirements review</p><p><span aria-hidden="true">$</span> <code>qae playwright review tests</code></p><p class="overview-terminal__result"><span class="material-symbols-outlined" aria-hidden="true">fact_check</span>Review existing TypeScript automation</p></div>
-        <div class="overview-terminal__footer"><span class="material-symbols-outlined" aria-hidden="true">lock</span>Configured local endpoint</div>
+        <div class="overview-terminal__bar"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></div>
+        <div class="overview-terminal__body">
+          <p><span class="overview-terminal__prompt">PS C:\qa-project&gt;</span> <code>qae doctor --verbose</code></p>
+          <p class="overview-terminal__result"><strong>PASS</strong> workspace configuration valid</p>
+          <p class="overview-terminal__result"><strong>PASS</strong> LM Studio is reachable</p>
+          <p class="overview-terminal__command"><span class="overview-terminal__prompt">PS C:\qa-project&gt;</span> <code>qae analyze requirements.md --model local-model --save</code></p>
+          <p class="overview-terminal__result"><strong>PASS</strong> Requirement analysis complete</p>
+          <p class="overview-terminal__path">Report: .qai/reports/requirement-analysis-20261001T103000000000Z-a1b2c3d4.md</p>
+        </div>
       </div>
     </section>
 
