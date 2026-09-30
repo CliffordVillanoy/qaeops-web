@@ -5666,10 +5666,6 @@ header nav[aria-label="Main Navigation"] .theme-toggle--desktop {
   opacity: .72;
 }
 
-.header-github-link:hover {
-  background: var(--ui-surface-soft);
-}
-
 .header-github-link:hover img {
   opacity: 1;
 }
@@ -5703,7 +5699,6 @@ html[data-theme="dark"] .header-github-link img {
 
 .theme-toggle:hover {
   color: var(--ui-brand);
-  background: var(--ui-surface-soft);
 }
 
 .theme-toggle:focus-visible {
