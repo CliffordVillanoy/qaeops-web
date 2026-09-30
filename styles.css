@@ -5243,10 +5243,6 @@ html[data-theme="dark"] .docs-search__icon {
     padding-right: .75rem;
     scrollbar-width: thin;
   }
-  body[data-docs-group="Setup"] .docs-sidebar {
-    overflow-y: scroll;
-    scrollbar-color: var(--ui-ink-subtle) var(--ui-border);
-  }
   .docs-navigation {
     overflow: visible;
     padding-top: .5rem;
@@ -5263,17 +5259,6 @@ html[data-theme="dark"] .docs-search__icon {
     padding: 0;
     border-top: 0;
   }
-}
-body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar {
-  width: 6px;
-}
-body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar-track {
-  border-radius: 999px;
-  background: var(--ui-border);
-}
-body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: var(--ui-ink-subtle);
 }
 @media (min-width: 1280px) {
   .docs-layout {
