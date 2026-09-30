@@ -5243,6 +5243,10 @@ html[data-theme="dark"] .docs-search__icon {
     padding-right: .75rem;
     scrollbar-width: thin;
   }
+  body[data-docs-group="Setup"] .docs-sidebar {
+    overflow-y: scroll;
+    scrollbar-color: color-mix(in srgb, var(--ui-ink-muted) 58%, transparent) transparent;
+  }
   .docs-navigation {
     overflow: visible;
     padding-top: .5rem;
@@ -5259,6 +5263,16 @@ html[data-theme="dark"] .docs-search__icon {
     padding: 0;
     border-top: 0;
   }
+}
+body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+body[data-docs-group="Setup"] .docs-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ui-ink-muted) 58%, transparent);
 }
 @media (min-width: 1280px) {
   .docs-layout {
