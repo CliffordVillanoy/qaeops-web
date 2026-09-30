@@ -5243,12 +5243,6 @@ html[data-theme="dark"] .docs-search__icon {
     padding-right: .75rem;
     scrollbar-width: thin;
   }
-  body[data-docs-group="Setup"] .docs-sidebar {
-    height: calc(100dvh - 7.5rem);
-    max-height: none;
-    overflow-y: scroll;
-    scrollbar-gutter: stable;
-  }
   .docs-navigation {
     overflow: visible;
     padding-top: .5rem;
