@@ -3742,7 +3742,7 @@ header > div.max-w-7xl {
 .overview-terminal__prompt {
   color: #a9a6ff;
 }
-.overview-terminal__body code {
+.cli-section .overview-terminal__body code {
   padding: 0;
   border: 0;
   color: #fff;
