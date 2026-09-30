@@ -5912,6 +5912,10 @@ html[data-theme="dark"] .cli-secondary {
   background: var(--ui-surface-soft);
 }
 
+.docs-callout {
+  border-left-color: #243b78;
+}
+
 .docs-search input {
   border-color: transparent;
   color: var(--ui-ink);
