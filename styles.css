@@ -6123,6 +6123,16 @@ html[data-theme="dark"] .docs-search-dialog__control > img {
   height: 1.25rem;
   opacity: .72;
 }
+
+.docs-search-dialog__close svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
 html[data-theme="dark"] .docs-search-dialog__clear img {
   filter: invert(1);
 }

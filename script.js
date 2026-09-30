@@ -317,7 +317,7 @@
           <div class="docs-search-dialog__actions">
             <button type="button" class="docs-search-dialog__clear" aria-label="Clear search" disabled><img src="${clearIcon}" alt="" width="20" height="20" aria-hidden="true"></button>
             <span class="docs-search-dialog__action-divider" aria-hidden="true"></span>
-            <button type="button" class="docs-search-dialog__close" aria-label="Close search">×</button>
+            <button type="button" class="docs-search-dialog__close" aria-label="Close search"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
           </div>
         </div>
         <p class="docs-search-dialog__status" aria-live="polite"></p>
