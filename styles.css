@@ -5244,7 +5244,8 @@ html[data-theme="dark"] .docs-search__icon {
     scrollbar-width: thin;
   }
   body[data-docs-group="Setup"] .docs-sidebar {
-    max-height: min(calc(100vh - 7.5rem), 36rem);
+    height: calc(100dvh - 7.5rem);
+    max-height: none;
   }
   .docs-navigation {
     overflow: visible;
