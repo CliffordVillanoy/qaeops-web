@@ -6049,7 +6049,7 @@ html[data-theme="dark"] .site-footer a:focus-visible {
   }
 }
 
-.privacy-layout { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+.privacy-layout { display: grid; grid-template-columns: minmax(0, 1fr); }
 .privacy-navigation nav { position: sticky; top: 7rem; display: grid; gap: .65rem; border-left: 1px solid var(--ui-border); padding-left: 1rem; }
 .privacy-navigation p, .privacy-eyebrow { color: var(--ui-ink-muted); font-size: .8125rem; font-weight: 600; }
 .privacy-navigation a { color: var(--ui-ink-muted); font-size: .875rem; text-decoration: none; }
