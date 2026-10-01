@@ -3745,25 +3745,21 @@ header > div.max-w-7xl {
 .overview-terminal__body {
   padding: clamp(1.25rem, 3vw, 1.75rem);
 }
-.cli-section .overview-terminal__banner {
+.overview-terminal__welcome {
+  display: block;
+  width: 100%;
+  height: auto;
   margin: 1.25rem 0 0;
-  padding: 0;
-  min-height: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: #b8b5ff;
-  box-shadow: none;
-  font: 400 clamp(.45rem, .8vw, .65rem)/1.5 var(--font-code);
-  white-space: pre;
-  overflow-x: auto;
+}
+.overview-terminal__body {
+  background: #0c0c0c;
 }
 .overview-terminal__cursor {
   display: inline-block;
   width: .5rem;
   height: .9rem;
   vertical-align: middle;
-  background: #b8b5ff;
+  background: #61d6d6;
 }
 .overview-terminal__body p {
   margin: 0;
