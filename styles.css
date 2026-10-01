@@ -6308,3 +6308,6 @@ html[data-theme="dark"] .docs-search-dialog__clear img {
 
 .privacy-content .terms-use-list { list-style: disc; padding-left: 1.25rem; }
 .privacy-content .terms-use-list li + li { margin-top: .375rem; }
+
+.privacy-content h1:has(+ .privacy-updated) { margin-bottom: .25rem; }
+.privacy-updated { margin: 0 0 1.5rem; color: var(--ui-ink-muted); font-size: 1rem; font-weight: 400; }
