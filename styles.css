@@ -3759,7 +3759,7 @@ header > div.max-w-7xl {
   width: .5rem;
   height: .9rem;
   vertical-align: middle;
-  background: #61d6d6;
+  background: #fff;
 }
 .overview-terminal__body p {
   margin: 0;
@@ -3771,7 +3771,7 @@ header > div.max-w-7xl {
   margin-top: 1rem;
 }
 .overview-terminal__prompt {
-  color: #a9a6ff;
+  color: #fff;
 }
 .cli-section .overview-terminal__body code {
   padding: 0;
