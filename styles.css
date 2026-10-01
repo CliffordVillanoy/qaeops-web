@@ -6311,3 +6311,8 @@ html[data-theme="dark"] .docs-search-dialog__clear img {
 
 .privacy-content h1:has(+ .privacy-updated) { margin-bottom: .25rem; }
 .privacy-updated { margin: 0 0 1.5rem; color: var(--ui-ink-muted); font-size: 1rem; font-weight: 400; }
+
+@media (min-width: 720px) {
+  .overview-summary { gap: 1.25rem; }
+  .overview-summary li + li { border-left: 1px solid var(--ui-border); padding-left: 1.25rem; }
+}
