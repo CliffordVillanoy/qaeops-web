@@ -3709,23 +3709,39 @@ header > div.max-w-7xl {
 .overview-terminal__bar {
   display: flex;
   align-items: center;
-  gap: .4rem;
-  min-height: 3rem;
-  padding: .75rem 1rem;
+  gap: .875rem;
+  min-height: 2.75rem;
+  padding: .35rem .75rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
   background: #182230;
 }
-.overview-terminal__bar > span {
-  width: .65rem;
-  height: .65rem;
-  border-radius: 999px;
-  background: #8686ac;
+.overview-terminal__tab {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  align-self: stretch;
+  width: min(15rem, 65%);
+  padding: .5rem .75rem;
+  border-radius: .5rem .5rem 0 0;
+  color: #e2e8f0;
+  background: #101828;
+  font: 500 .75rem/1.4 var(--font-ui);
 }
-.overview-terminal__bar > span:nth-child(2) {
-  opacity: .72;
+.overview-terminal__bar svg {
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: #e2e8f0;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-.overview-terminal__bar > span:nth-child(3) {
-  opacity: .48;
+.overview-terminal__close {
+  margin-left: auto;
+}
+.overview-terminal__chevron {
+  opacity: .65;
 }
 .overview-terminal__body {
   padding: clamp(1.25rem, 3vw, 1.75rem);
