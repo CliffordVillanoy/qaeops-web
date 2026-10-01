@@ -3724,7 +3724,6 @@ header > div.max-w-7xl {
   padding: .5rem .75rem;
   border-radius: .5rem .5rem 0 0;
   color: #e2e8f0;
-  background: #101828;
   font: 500 .75rem/1.4 var(--font-ui);
 }
 .overview-terminal__bar svg {
