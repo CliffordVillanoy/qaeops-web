@@ -6360,6 +6360,28 @@ html[data-theme="dark"] .docs-search-dialog__clear img {
   .overview-architecture li:first-child { padding-left: 0; }
   .overview-architecture li:last-child { padding-right: 0; }
   .overview-architecture li + li { border-left: 1px solid var(--ui-border); }
-  .overview-architecture li > .material-symbols-outlined { grid-row: auto; }
+  .overview-architecture li > .overview-architecture__step { grid-row: auto; }
   .overview-architecture li p { grid-column: 1; }
+}
+
+.overview-architecture li { align-items: start; }
+.overview-architecture__step {
+  display: grid;
+  place-items: center;
+  grid-row: 1 / 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 50%;
+  background: var(--ui-surface);
+  color: var(--ui-brand);
+  font-size: .8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.overview-architecture strong { line-height: 1.5; }
+@media (min-width: 1024px) {
+  .overview-architecture { padding-block: 2rem; }
+  .overview-architecture li { gap: 1rem; }
+  .overview-architecture li p { max-width: 24ch; }
 }
