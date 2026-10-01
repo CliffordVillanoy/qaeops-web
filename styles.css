@@ -6305,3 +6305,6 @@ html[data-theme="dark"] .docs-search-dialog__clear img {
     animation: none;
   }
 }
+
+.privacy-content .terms-use-list { list-style: disc; padding-left: 1.25rem; }
+.privacy-content .terms-use-list li + li { margin-top: .375rem; }
