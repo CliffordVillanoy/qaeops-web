@@ -6049,6 +6049,27 @@ html[data-theme="dark"] .site-footer a:focus-visible {
   }
 }
 
+.privacy-layout { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+.privacy-navigation nav { position: sticky; top: 7rem; display: grid; gap: .65rem; border-left: 1px solid var(--ui-border); padding-left: 1rem; }
+.privacy-navigation p, .privacy-eyebrow { color: var(--ui-ink-muted); font-size: .8125rem; font-weight: 600; }
+.privacy-navigation a { color: var(--ui-ink-muted); font-size: .875rem; text-decoration: none; }
+.privacy-navigation a:hover { color: var(--ui-brand); }
+.privacy-content { min-width: 0; max-width: 52rem; }
+.privacy-content h1 { margin: .5rem 0 1rem; }
+.privacy-meta { color: var(--ui-ink-muted); font-size: .875rem; }
+.privacy-content section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--ui-border); scroll-margin-top: 7rem; }
+.privacy-content section h2 { margin: 0 0 1rem; font-size: 1.5rem; }
+.privacy-content p, .privacy-content li { line-height: 1.75; }
+.privacy-content ul { padding-left: 1.25rem; }
+.privacy-content li + li { margin-top: .75rem; }
+.privacy-content a { color: var(--ui-brand); text-underline-offset: .2em; }
+.privacy-page a:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
+@media (max-width: 767px) {
+  .privacy-layout { grid-template-columns: minmax(0, 1fr); }
+  .privacy-navigation nav { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .privacy-navigation p { grid-column: 1 / -1; }
+}
+
 /* Keyboard-triggered documentation search dialog. */
 html.docs-search-open {
   overflow: hidden;
