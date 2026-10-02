@@ -6060,7 +6060,7 @@ html[data-theme="dark"] .site-footer a:focus-visible {
 .privacy-content section { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--ui-border); scroll-margin-top: 7rem; }
 .privacy-content section h2 { margin: 0 0 1rem; font-size: 1.5rem; }
 .privacy-content p, .privacy-content li { line-height: 1.75; }
-.privacy-content ul { padding-left: 1.25rem; }
+.privacy-content ul { list-style: disc; padding-left: 1.25rem; }
 .privacy-content li + li { margin-top: .75rem; }
 .privacy-content a { color: var(--ui-brand); text-underline-offset: .2em; }
 .privacy-page a:focus-visible { outline: 3px solid var(--ui-focus); outline-offset: 3px; }
