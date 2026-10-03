@@ -313,7 +313,7 @@
       <div class="docs-search-dialog__panel">
         <div class="docs-search-dialog__control">
           <img src="${searchIcon}" alt="" width="22" height="22" aria-hidden="true">
-          <input type="search" aria-label="Search documentation" placeholder="Search documentation" autocomplete="off" aria-controls="docs-search-dialog-results" aria-expanded="false">
+          <input type="search" aria-label="Search documentation" placeholder="Search documentation" autocomplete="off" aria-controls="docs-search-dialog-results">
           <div class="docs-search-dialog__actions">
             <button type="button" class="docs-search-dialog__clear" aria-label="Clear search" disabled><img src="${clearIcon}" alt="" width="20" height="20" aria-hidden="true"></button>
             <span class="docs-search-dialog__action-divider" aria-hidden="true"></span>
@@ -398,7 +398,6 @@
       docsSearchStatus.textContent = '';
       docsSearchResults.replaceChildren();
       docsSearchResults.hidden = true;
-      docsSearchInput.setAttribute('aria-expanded', 'false');
       if (focus) docsSearchInput.focus();
     }
 
@@ -407,7 +406,6 @@
       docsSearchClear.hidden = !query;
       docsSearchResults.replaceChildren();
       docsSearchResults.hidden = true;
-      docsSearchInput.setAttribute('aria-expanded', 'false');
 
       if (!query) {
         docsSearchStatus.textContent = '';
@@ -440,7 +438,6 @@
           : 'No documentation results found.';
         matches.forEach(({ item }) => docsSearchResults.append(createResult(item, query)));
         docsSearchResults.hidden = !matches.length;
-        docsSearchInput.setAttribute('aria-expanded', String(Boolean(matches.length)));
       } catch {
         docsSearchStatus.textContent = 'Documentation search is temporarily unavailable.';
       }
@@ -450,7 +447,6 @@
       clearButton.disabled = !query;
       modalResults.replaceChildren();
       modalResults.hidden = true;
-      modalInput.setAttribute('aria-expanded', 'false');
 
       if (!query) {
         modalStatus.textContent = '';
@@ -483,7 +479,6 @@
           : 'No documentation results found.';
         matches.forEach(({ item }) => modalResults.append(createResult(item, query)));
         modalResults.hidden = !matches.length;
-        modalInput.setAttribute('aria-expanded', String(Boolean(matches.length)));
       } catch {
         modalStatus.textContent = 'Documentation search is temporarily unavailable.';
       }
@@ -540,7 +535,6 @@
     document.addEventListener('click', (event) => {
       if (!docsSearch.contains(event.target)) {
         docsSearchResults.hidden = true;
-        docsSearchInput.setAttribute('aria-expanded', 'false');
       }
     });
     modalInput.addEventListener('input', renderResults);

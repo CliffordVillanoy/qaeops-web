@@ -6385,3 +6385,5 @@ html[data-theme="dark"] .docs-search-dialog__clear img {
   .overview-architecture li { gap: 1rem; }
   .overview-architecture li p { max-width: 24ch; }
 }
+
+.privacy-content a { text-decoration: underline; }
