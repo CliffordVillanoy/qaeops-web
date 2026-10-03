@@ -13,5 +13,10 @@ for (const page of pages) {
   assert(after.includes('media="print" onload="this.media='), `${page}: nonblocking fonts`);
   assert(after.includes('<noscript>'), `${page}: font fallback without JavaScript`);
   assert(!after.match(/<input[^>]+aria-expanded/), `${page}: searchbox ARIA`);
+  const iconNames = new Set(after.match(/icon_names=([^&"]+)/)[1].split(','));
+  for (const match of after.matchAll(/<span[^>]+class="[^"]*material-symbols-outlined[^"]*"[^>]*>([^<]+)<\/span>/g)) {
+    assert(iconNames.has(match[1].trim()), `${page}: icon subset includes ${match[1]}`);
+  }
+  assert(iconNames.has('content_copy') && iconNames.has('check'), `${page}: dynamic copy icons`);
 }
 console.log('PASS: unchanged page content, optimized loading, no-JS fallback, and searchbox ARIA.');
